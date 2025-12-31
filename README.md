@@ -28,63 +28,56 @@ The application implements strict **Role-Based Access Control (RBAC)** to govern
 
 ## 📂 Project Structure
 
-```bash
-Velion-DKN-System/
-├── velion-dkn-frontend/    # React Client Application
-│   ├── src/
-│   │   ├── components/     # Reusable UI Components (KnowledgeCard, Navbar)
-│   │   ├── pages/          # View Logic (Dashboard, Upload)
-│   │   └── api/            # Axios Configuration
-├── velion-dkn-backend/     # Node.js Server Application
-│   ├── src/
-│   │   ├── controllers/    # Business Logic
-│   │   ├── models/         # Data Models & Validation
-│   │   └── routes/         # API Endpoints
-└── README.md
+    Velion-DKN-System/
+    ├── velion-dkn-frontend/    # React Client Application
+    │   ├── src/
+    │   │   ├── components/     # Reusable UI Components (KnowledgeCard, Navbar)
+    │   │   ├── pages/          # View Logic (Dashboard, Upload)
+    │   │   └── api/            # Axios Configuration
+    ├── velion-dkn-backend/     # Node.js Server Application
+    │   ├── src/
+    │   │   ├── controllers/    # Business Logic
+    │   │   ├── models/         # Data Models & Validation
+    │   │   └── routes/         # API Endpoints
+    └── README.md
 
+## ⚡ Getting Started
 
-⚡ Getting Started
 Follow these instructions to run the project locally.
 
-Prerequisites
-Node.js (v14 or higher)
+### Prerequisites
+* Node.js (v14 or higher)
+* npm (Node Package Manager)
 
-npm (Node Package Manager)
+### 1. Start the Backend Server
+The backend runs on **Port 5000**.
 
-1. Start the Backend Server
-The backend runs on Port 5000.
+    cd velion-dkn-backend
+    npm install
+    node src/app.js
 
-Bash
+*You should see: `Server running on port 5000`*
 
-cd velion-dkn-backend
-npm install
-node src/app.js
-You should see: Server running on port 5000
+### 2. Start the Frontend Client
+Open a new terminal. The frontend runs on **Port 3000**.
 
-2. Start the Frontend Client
-Open a new terminal. The frontend runs on Port 3000.
+    cd velion-dkn-frontend
+    npm install
+    npm start
 
-Bash
+*The application will automatically open at `http://localhost:3000`*
 
-cd velion-dkn-frontend
-npm install
-npm start
-The application will automatically open at http://localhost:3000
+## 🧪 How to Test the Logic (Demo)
 
-🧪 How to Test the Logic (Demo)
-Consultant View (Default):
+1.  **Consultant View (Default):**
+    * Use the dropdown in the Navbar to select **"Consultant"**.
+    * Observe that assets marked as *"Pending"* show a "Pending Review" text. You cannot approve them.
 
-Use the dropdown in the Navbar to select "Consultant".
+2.  **Knowledge Champion View (Admin):**
+    * Switch the dropdown to **"Knowledge Champion"**.
+    * Observe that *"Pending"* assets now display a green **"✓ Approve"** button.
+    * Clicking "Approve" updates the status to "Published" instantly.
 
-Observe that assets marked as "Pending" show a "Pending Review" text. You cannot approve them.
+## 📜 License
 
-Knowledge Champion View (Admin):
-
-Switch the dropdown to "Knowledge Champion".
-
-Observe that "Pending" assets now display a green "✓ Approve" button.
-
-Clicking "Approve" updates the status to "Published" instantly.
-
-📜 License
 This project is for educational purposes as part of the MSc Software Engineering curriculum at the University of West London.
