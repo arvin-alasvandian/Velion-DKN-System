@@ -1,36 +1,34 @@
-Velion Dynamics - Digital Knowledge Network (DKN)
-University of West London Module: Mobile Web Component Development (CP70055E) Author: Arvin Alasvandian Shekari
+# Velion Dynamics - Digital Knowledge Network (DKN)
 
-📖 Project Overview
-The Velion DKN is a full-stack Mobile Web Application designed to centralize organizational knowledge assets. Built as part of a Master's level coursework, this system addresses the need for a component-based architecture that supports a globally distributed workforce.
+> **University of West London**
+> **Module:** Mobile Web Component Development (CP70055E)
+> **Author:** Arvin Alasvandian Shekari
 
-The application implements strict Role-Based Access Control (RBAC) to govern the lifecycle of knowledge assets, distinguishing between standard Consultants (Content Creators) and Knowledge Champions (Approvers).
+## 📖 Project Overview
 
-🚀 Key Features
-** decoupled Client-Server Architecture:** Built using the MERN stack principles (React.js frontend, Node.js backend).
+The **Velion DKN** is a full-stack Mobile Web Application designed to centralize organizational knowledge assets. Built as part of a Master's level coursework, this system addresses the need for a component-based architecture that supports a globally distributed workforce.
 
-Mobile-First Design: Responsive grid layout utilizing Bootstrap 5, ensuring seamless access across desktop and mobile devices.
+The application implements strict **Role-Based Access Control (RBAC)** to govern the lifecycle of knowledge assets, distinguishing between standard **Consultants** (Content Creators) and **Knowledge Champions** (Approvers).
 
-Role-Based Access Control (RBAC):
+## 🚀 Key Features
 
-Consultant Role: Can search, view, and upload assets. "Pending" items are read-only.
+* **Decoupled Client-Server Architecture:** Built using the MERN stack principles (React.js frontend, Node.js backend).
+* **Mobile-First Design:** Responsive grid layout utilizing **Bootstrap 5**, ensuring seamless access across desktop and mobile devices.
+* **Role-Based Access Control (RBAC):**
+    * *Consultant Role:* Can search, view, and upload assets. "Pending" items are read-only.
+    * *Knowledge Champion Role:* Has administrative privileges to **Approve** pending assets, changing their status to "Published".
+* **Strict Type Enforcement:** Backend logic ensures data integrity using Enumerations for Asset Types (Report, Framework, Template) and Status Types.
+* **Simulated AI Integration:** Features a "Black Box" AI recommendation widget and mocked external API endpoints.
 
-Knowledge Champion Role: Has administrative privileges to Approve pending assets, changing their status to "Published".
+## 🛠️ Technology Stack
 
-Strict Type Enforcement: Backend logic ensures data integrity using Enumerations for Asset Types (Report, Framework, Template) and Status Types.
+* **Frontend:** React.js, Bootstrap 5, Axios
+* **Backend:** Node.js, Express.js
+* **Architecture:** MVC (Model-View-Controller), RESTful API
 
-Simulated AI Integration: Features a "Black Box" AI recommendation widget and mocked external API endpoints.
+## 📂 Project Structure
 
-🛠️ Technology Stack
-Frontend: React.js, Bootstrap 5, Axios
-
-Backend: Node.js, Express.js
-
-Architecture: MVC (Model-View-Controller), RESTful API
-
-📂 Project Structure
-Bash
-
+```bash
 Velion-DKN-System/
 ├── velion-dkn-frontend/    # React Client Application
 │   ├── src/
@@ -43,6 +41,8 @@ Velion-DKN-System/
 │   │   ├── models/         # Data Models & Validation
 │   │   └── routes/         # API Endpoints
 └── README.md
+
+
 ⚡ Getting Started
 Follow these instructions to run the project locally.
 
