@@ -1,90 +1,83 @@
-Velion Dynamics - Digital Knowledge Network (DKN)
-University of West London Module: Mobile Web Component Development (CP70055E) Author: Arvin Alasvandian Shekari
+# Velion Dynamics - Digital Knowledge Network (DKN)
 
-📖 Project Overview
-The Velion DKN is a full-stack Mobile Web Application designed to centralize organizational knowledge assets. Built as part of a Master's level coursework, this system addresses the need for a component-based architecture that supports a globally distributed workforce.
+> **University of West London**
+> **Module:** Mobile Web Component Development (CP70055E)
+> **Author:** Arvin Alasvandian Shekari
 
-The application implements strict Role-Based Access Control (RBAC) to govern the lifecycle of knowledge assets, distinguishing between standard Consultants (Content Creators) and Knowledge Champions (Approvers).
+## 📖 Project Overview
 
-🚀 Key Features
-** decoupled Client-Server Architecture:** Built using the MERN stack principles (React.js frontend, Node.js backend).
+The **Velion DKN** is a full-stack Mobile Web Application designed to centralize organizational knowledge assets. Built as part of a Master's level coursework, this system addresses the need for a component-based architecture that supports a globally distributed workforce.
 
-Mobile-First Design: Responsive grid layout utilizing Bootstrap 5, ensuring seamless access across desktop and mobile devices.
+The application implements strict **Role-Based Access Control (RBAC)** to govern the lifecycle of knowledge assets, distinguishing between standard **Consultants** (Content Creators) and **Knowledge Champions** (Approvers).
 
-Role-Based Access Control (RBAC):
+## 🚀 Key Features
 
-Consultant Role: Can search, view, and upload assets. "Pending" items are read-only.
+* **Decoupled Client-Server Architecture:** Built using the MERN stack principles (React.js frontend, Node.js backend).
+* **Mobile-First Design:** Responsive grid layout utilizing **Bootstrap 5**, ensuring seamless access across desktop and mobile devices.
+* **Role-Based Access Control (RBAC):**
+    * *Consultant Role:* Can search, view, and upload assets. "Pending" items are read-only.
+    * *Knowledge Champion Role:* Has administrative privileges to **Approve** pending assets, changing their status to "Published".
+* **Strict Type Enforcement:** Backend logic ensures data integrity using Enumerations for Asset Types (Report, Framework, Template) and Status Types.
+* **Simulated AI Integration:** Features a "Black Box" AI recommendation widget and mocked external API endpoints.
 
-Knowledge Champion Role: Has administrative privileges to Approve pending assets, changing their status to "Published".
+## 🛠️ Technology Stack
 
-Strict Type Enforcement: Backend logic ensures data integrity using Enumerations for Asset Types (Report, Framework, Template) and Status Types.
+* **Frontend:** React.js, Bootstrap 5, Axios
+* **Backend:** Node.js, Express.js
+* **Architecture:** MVC (Model-View-Controller), RESTful API
 
-Simulated AI Integration: Features a "Black Box" AI recommendation widget and mocked external API endpoints.
+## 📂 Project Structure
 
-🛠️ Technology Stack
-Frontend: React.js, Bootstrap 5, Axios
+    Velion-DKN-System/
+    ├── velion-dkn-frontend/    # React Client Application
+    │   ├── src/
+    │   │   ├── components/     # Reusable UI Components (KnowledgeCard, Navbar)
+    │   │   ├── pages/          # View Logic (Dashboard, Upload)
+    │   │   └── api/            # Axios Configuration
+    ├── velion-dkn-backend/     # Node.js Server Application
+    │   ├── src/
+    │   │   ├── controllers/    # Business Logic
+    │   │   ├── models/         # Data Models & Validation
+    │   │   └── routes/         # API Endpoints
+    └── README.md
 
-Backend: Node.js, Express.js
+## ⚡ Getting Started
 
-Architecture: MVC (Model-View-Controller), RESTful API
-
-📂 Project Structure
-Bash
-
-Velion-DKN-System/
-├── velion-dkn-frontend/    # React Client Application
-│   ├── src/
-│   │   ├── components/     # Reusable UI Components (KnowledgeCard, Navbar)
-│   │   ├── pages/          # View Logic (Dashboard, Upload)
-│   │   └── api/            # Axios Configuration
-├── velion-dkn-backend/     # Node.js Server Application
-│   ├── src/
-│   │   ├── controllers/    # Business Logic
-│   │   ├── models/         # Data Models & Validation
-│   │   └── routes/         # API Endpoints
-└── README.md
-⚡ Getting Started
 Follow these instructions to run the project locally.
 
-Prerequisites
-Node.js (v14 or higher)
+### Prerequisites
+* Node.js (v14 or higher)
+* npm (Node Package Manager)
 
-npm (Node Package Manager)
+### 1. Start the Backend Server
+The backend runs on **Port 5000**.
 
-1. Start the Backend Server
-The backend runs on Port 5000.
+    cd velion-dkn-backend
+    npm install
+    node src/app.js
 
-Bash
+*You should see: `Server running on port 5000`*
 
-cd velion-dkn-backend
-npm install
-node src/app.js
-You should see: Server running on port 5000
+### 2. Start the Frontend Client
+Open a new terminal. The frontend runs on **Port 3000**.
 
-2. Start the Frontend Client
-Open a new terminal. The frontend runs on Port 3000.
+    cd velion-dkn-frontend
+    npm install
+    npm start
 
-Bash
+*The application will automatically open at `http://localhost:3000`*
 
-cd velion-dkn-frontend
-npm install
-npm start
-The application will automatically open at http://localhost:3000
+## 🧪 How to Test the Logic (Demo)
 
-🧪 How to Test the Logic (Demo)
-Consultant View (Default):
+1.  **Consultant View (Default):**
+    * Use the dropdown in the Navbar to select **"Consultant"**.
+    * Observe that assets marked as *"Pending"* show a "Pending Review" text. You cannot approve them.
 
-Use the dropdown in the Navbar to select "Consultant".
+2.  **Knowledge Champion View (Admin):**
+    * Switch the dropdown to **"Knowledge Champion"**.
+    * Observe that *"Pending"* assets now display a green **"✓ Approve"** button.
+    * Clicking "Approve" updates the status to "Published" instantly.
 
-Observe that assets marked as "Pending" show a "Pending Review" text. You cannot approve them.
+## 📜 License
 
-Knowledge Champion View (Admin):
-
-Switch the dropdown to "Knowledge Champion".
-
-Observe that "Pending" assets now display a green "✓ Approve" button.
-
-Clicking "Approve" updates the status to "Published" instantly.
-
-📜 License
 This project is for educational purposes as part of the MSc Software Engineering curriculum at the University of West London.
