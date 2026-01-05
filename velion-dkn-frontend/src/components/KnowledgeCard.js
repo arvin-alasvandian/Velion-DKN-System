@@ -1,8 +1,7 @@
 import React from 'react';
 import api from '../api/axiosConfig';
 
-const KnowledgeCard = ({ asset, onUpdate, userRole }) => { // <--- Receive userRole here
-    
+const KnowledgeCard = ({ asset, onUpdate, userRole }) => { 
     // Logic to choose badge color based on status
     const getBadgeColor = (status) => {
         switch (status) {
@@ -13,7 +12,7 @@ const KnowledgeCard = ({ asset, onUpdate, userRole }) => { // <--- Receive userR
         }
     };
 
-    // Fixes 'handleApprove is not defined' error
+    // Async handler to trigger the approval API call
     const handleApprove = async () => {
         try {
             // Call the backend route
@@ -36,7 +35,6 @@ const KnowledgeCard = ({ asset, onUpdate, userRole }) => { // <--- Receive userR
                             {asset.status}
                         </span>
                     </div>
-                    
                     <p className="card-text text-muted small mb-2">
                         ID: {asset.id}
                     </p>
@@ -45,7 +43,7 @@ const KnowledgeCard = ({ asset, onUpdate, userRole }) => { // <--- Receive userR
                         <span className="badge bg-light text-dark border">
                             {asset.category}
                         </span>
-                        
+
                         {/* Logic: Show Button ONLY if Pending AND user is 'Knowledge Champion' */}
                         {asset.status === 'Pending' && userRole === 'Knowledge Champion' && (
                             <button 
@@ -56,7 +54,7 @@ const KnowledgeCard = ({ asset, onUpdate, userRole }) => { // <--- Receive userR
                             </button>
                         )}
 
-                        {/* Optional: Show message for Consultants */}
+                        {/* Show message for Consultants */}
                         {asset.status === 'Pending' && userRole === 'Consultant' && (
                             <span className="text-muted small fst-italic">
                                 Pending Review
@@ -69,5 +67,4 @@ const KnowledgeCard = ({ asset, onUpdate, userRole }) => { // <--- Receive userR
     );
 };
 
-// Fixes 'module has no exports' error
 export default KnowledgeCard;
